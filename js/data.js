@@ -34,7 +34,9 @@ const DataModule = (() => {
             }
 
             try {
-                const response = await fetch('../data/products.json');
+                // Use a path that works both locally and on GitHub Pages
+                const basePath = window.location.hostname === 'oppknox.github.io' ? '/MaxPump' : '';
+                const response = await fetch(`${basePath}/data/products.json`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

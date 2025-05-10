@@ -132,8 +132,9 @@ const App = (() => {
             // Set image
             const img = clone.querySelector('.product-image img');
             
-            // Use the correct image file path from product data
-            img.src = `images/products/${product.images[0]}`;
+            // Use the correct image file path that works both locally and on GitHub Pages
+            const basePath = window.location.hostname === 'oppknox.github.io' ? '/MaxPump' : '';
+            img.src = `${basePath}/images/products/${product.images[0]}`;
             img.alt = product.name;
             
             // Set availability badge with enhanced stock information

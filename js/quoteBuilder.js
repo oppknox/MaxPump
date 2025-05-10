@@ -239,9 +239,10 @@ const QuoteBuilder = (() => {
             // Set product ID
             quoteItem.dataset.productId = product.id;
             
-            // Set image
+            // Set image with path that works for both local and GitHub Pages
             const img = clone.querySelector('.quote-item-image img');
-            img.src = `images/products/${product.images[0]}`;
+            const basePath = window.location.hostname === 'oppknox.github.io' ? '/MaxPump' : '';
+            img.src = `${basePath}/images/products/${product.images[0]}`;
             img.alt = product.name;
             
             // Set info
@@ -570,9 +571,11 @@ const QuoteBuilder = (() => {
         if (!quoteItem) return;
         
         // Render product info
+        // Use base path for image that works on both local and GitHub Pages
+        const basePath = window.location.hostname === 'oppknox.github.io' ? '/MaxPump' : '';
         _elements.locationProductInfo.innerHTML = `
             <div class="location-product-image">
-                <img src="images/products/${product.images[0]}" alt="${product.name}">
+                <img src="${basePath}/images/products/${product.images[0]}" alt="${product.name}">
             </div>
             <div class="location-product-details">
                 <h3>${product.name}</h3>

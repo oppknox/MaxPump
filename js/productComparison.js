@@ -186,9 +186,10 @@ const ProductComparison = (() => {
         // Image row
         tableHTML += '<tr><td>Image</td>';
         products.forEach(product => {
+            const basePath = window.location.hostname === 'oppknox.github.io' ? '/MaxPump' : '';
             tableHTML += `<td>
                 <div class="comparison-image">
-                    <img src="images/products/${product.images[0]}" alt="${product.name}">
+                    <img src="${basePath}/images/products/${product.images[0]}" alt="${product.name}">
                 </div>
             </td>`;
         });
@@ -437,15 +438,16 @@ const ProductDetail = (() => {
 
     const _renderProductDetail = (product) => {
         // Create images section
+        const basePath = window.location.hostname === 'oppknox.github.io' ? '/MaxPump' : '';
         const imagesHTML = `
             <div class="detail-product-images">
                 <div class="detail-main-image">
-                    <img src="images/products/${product.images[0]}" alt="${product.name}">
+                    <img src="${basePath}/images/products/${product.images[0]}" alt="${product.name}">
                 </div>
                 <div class="detail-image-thumbnails">
                     ${product.images.map((img, index) => `
                         <div class="detail-thumbnail ${index === 0 ? 'active' : ''}" data-image="${img}">
-                            <img src="images/products/${img}" alt="${product.name} thumbnail ${index + 1}">
+                            <img src="${basePath}/images/products/${img}" alt="${product.name} thumbnail ${index + 1}">
                         </div>
                     `).join('')}
                 </div>
@@ -525,9 +527,10 @@ const ProductDetail = (() => {
                 thumbnails.forEach(t => t.classList.remove('active'));
                 thumbnail.classList.add('active');
                 
-                // Update main image
+                // Update main image with correct path for GitHub Pages
                 const mainImg = _elements.detailProductContent.querySelector('.detail-main-image img');
-                mainImg.src = `images/products/${thumbnail.dataset.image}`;
+                const basePath = window.location.hostname === 'oppknox.github.io' ? '/MaxPump' : '';
+                mainImg.src = `${basePath}/images/products/${thumbnail.dataset.image}`;
             });
         });
     };
