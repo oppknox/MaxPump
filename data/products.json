@@ -1,0 +1,188 @@
+{
+  "products": [
+    {
+      "id": "A1062",
+      "name": "Multi Functional Trainer",
+      "price": 2499.99,
+      "description": "Professional multi-functional trainer designed for elite athletes. Features articulated arms with 360° free movement and adjustable height, multi-chinning bar, and flexible vertical footpad.",
+      "dimensions": "2400*950*2250 (MM)",
+      "heightFt": "7.9",
+      "category": ["ELITE", "STRENGTH"],
+      "features": [
+        "Effective whole-body unlimited work-out capabilities",
+        "Articulated arms with 360° free movement and adjustable height",
+        "Multi-chinning bar",
+        "Flexible vertical footpad"
+      ],
+      "images": ["A1062.jpg"],
+      "inStock": true,
+      "locations": [
+        {
+          "name": "Main Warehouse",
+          "quantity": 8,
+          "readyToShip": true
+        },
+        {
+          "name": "West Coast Distribution",
+          "quantity": 3,
+          "readyToShip": true
+        }
+      ],
+      "buildTime": 0,
+      "relatedProducts": ["A1064", "A6017"]
+    },
+    {
+      "id": "A1064",
+      "name": "3 Station Cable",
+      "price": 3299.99,
+      "description": "Professional 3-station cable machine providing multiple workout options with independent weight stacks for multiple simultaneous users.",
+      "dimensions": "2600*2200*2300 (MM)",
+      "heightFt": "8.2",
+      "category": ["ELITE", "STRENGTH"],
+      "features": [
+        "3 independent workout stations",
+        "Heavy-duty steel construction",
+        "Smooth cable operation",
+        "Multiple attachment options"
+      ],
+      "images": ["A1064.jpg"],
+      "inStock": false,
+      "locations": [],
+      "buildTime": 14,
+      "relatedProducts": ["A1062", "A7046"]
+    },
+    {
+      "id": "A5003",
+      "name": "Pro Series Leg Extension",
+      "price": 2899.99,
+      "description": "Professional leg extension machine with adjustable seat and angle settings for precise quadriceps targeting and development.",
+      "dimensions": "1950*1200*1500 (MM)",
+      "heightFt": "4.9",
+      "category": ["ELITE", "STRENGTH", "LOWER BODY"],
+      "features": [
+        "Heavy-duty steel construction",
+        "Adjustable seat position",
+        "Precise angle settings",
+        "Ergonomic padding for maximum comfort"
+      ],
+      "images": ["A5003.png"],
+      "inStock": true,
+      "locations": [
+        {
+          "name": "Main Warehouse",
+          "quantity": 5,
+          "readyToShip": true
+        }
+      ],
+      "buildTime": 0,
+      "relatedProducts": ["A6017", "A7046"]
+    },
+    {
+      "id": "A6017",
+      "name": "Power Leg Press",
+      "price": 3899.99,
+      "description": "Heavy-duty power leg press with adjustable sled and weight capacity up to 1000lbs. Provides maximum lower body development for elite athletes.",
+      "dimensions": "2800*1800*1500 (MM)",
+      "heightFt": "4.9",
+      "category": ["ELITE", "STRENGTH", "LOWER BODY"],
+      "features": [
+        "1000lb weight capacity",
+        "Adjustable sled angle",
+        "Extra-large foot plate",
+        "Linear bearing system for smooth movement"
+      ],
+      "images": ["A6017-Power-Leg-Press.jpg"],
+      "inStock": true,
+      "locations": [
+        {
+          "name": "West Coast Distribution",
+          "quantity": 2,
+          "readyToShip": true
+        }
+      ],
+      "buildTime": 0,
+      "relatedProducts": ["A5003", "A1062"]
+    },
+    {
+      "id": "A7046",
+      "name": "Shoulder Press Machine",
+      "price": 2299.99,
+      "description": "Professional shoulder press machine with converging press arms for natural movement patterns and maximum deltoid development.",
+      "dimensions": "1800*1500*1600 (MM)",
+      "heightFt": "5.2",
+      "category": ["ELITE", "STRENGTH", "UPPER BODY"],
+      "features": [
+        "Converging press arms",
+        "Adjustable seat height",
+        "Multiple handle positions",
+        "Independent arm action"
+      ],
+      "images": ["A7046.png"],
+      "inStock": true,
+      "locations": [
+        {
+          "name": "East Coast Distribution",
+          "quantity": 3,
+          "readyToShip": true
+        }
+      ],
+      "buildTime": 0,
+      "relatedProducts": ["A7075", "A1064"]
+    },
+    {
+      "id": "A7075",
+      "name": "Smith Machine",
+      "price": 2999.99,
+      "description": "Premium smith machine with linear bearings and multiple safety catches. Designed for safe and effective strength training.",
+      "dimensions": "2100*1400*2300 (MM)",
+      "heightFt": "7.5",
+      "category": ["ELITE", "STRENGTH", "FUNCTIONAL"],
+      "features": [
+        "Linear bearing system",
+        "Multiple safety catches",
+        "Integrated Olympic weight storage",
+        "Precise counterbalance system"
+      ],
+      "images": ["A7075.jpg"],
+      "inStock": true,
+      "locations": [
+        {
+          "name": "Main Warehouse",
+          "quantity": 4,
+          "readyToShip": true
+        },
+        {
+          "name": "West Coast Distribution",
+          "quantity": 1,
+          "readyToShip": true
+        }
+      ],
+      "buildTime": 0,
+      "relatedProducts": ["A7046", "A1062"]
+    }
+  ],
+  "locations": [
+    {
+      "id": "warehouse",
+      "name": "Main Warehouse",
+      "address": "123 Industrial Pkwy, Lexington, KY 40505"
+    },
+    {
+      "id": "west",
+      "name": "West Coast Distribution",
+      "address": "456 Pacific Blvd, Los Angeles, CA 90023"
+    },
+    {
+      "id": "east",
+      "name": "East Coast Distribution",
+      "address": "789 Atlantic Ave, Newark, NJ 07101"
+    }
+  ],
+  "categories": [
+    {"id": "elite", "name": "ELITE"},
+    {"id": "strength", "name": "STRENGTH"},
+    {"id": "functional", "name": "FUNCTIONAL"},
+    {"id": "upper", "name": "UPPER BODY"},
+    {"id": "lower", "name": "LOWER BODY"}
+  ]
+}
