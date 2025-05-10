@@ -3,292 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxPumpSport - Professional Gym Equipment</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>MaxPump Sport Equipment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">
-                    <img src="images/maxpump-logo.png" alt="MaxPumpSport Logo" id="logo-placeholder">
+                <a href="/">
+                    <img src="images/maxpump-logo.png" alt="MaxPump Logo">
                 </a>
             </div>
-            <nav>
-                <button class="menu-toggle" id="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="main-menu" id="main-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li>
-                        <button id="quote-btn" class="quote-btn">
-                            <i class="fas fa-shopping-cart"></i> Quote Builder
-                            <span id="quote-count" class="quote-count">0</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="main-menu" id="main-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li>
+                    <button class="quote-btn" id="open-quote">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>My Quote</span>
+                        <span class="quote-count" id="quote-count">0</span>
+                    </button>
+                </li>
+            </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>MAXPUMP</h1>
-                <h2>DESIGNED FOR ELITE ATHLETES</h2>
-                <a href="#products" class="btn-primary">Explore Products</a>
-            </div>
+        <div class="hero-content">
+            <h1>MAXPUMP</h1>
+            <h2>DESIGNED FOR ELITE ATHLETES</h2>
+            <a href="#products" class="btn-primary">Explore Products</a>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
+    <section class="products" id="products">
         <div class="container">
             <h2 class="section-title">Our Products</h2>
+            
             <div class="filter-container">
                 <div class="search-bar">
-                    <input type="text" id="product-search" placeholder="Search products...">
+                    <input type="text" id="search-products" placeholder="Search products...">
                     <button id="search-btn"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="category-filter">
                     <label for="category-select">Filter by Category:</label>
                     <select id="category-select">
                         <option value="all">All Categories</option>
-                        <!-- Categories will be populated dynamically -->
+                        <!-- Categories will be loaded dynamically -->
                     </select>
                 </div>
             </div>
-            <div id="product-container" class="product-grid">
-                <!-- Products will be loaded here dynamically -->
+            
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be loaded dynamically -->
                 <div class="loading">Loading products...</div>
             </div>
         </div>
     </section>
 
-    <!-- Quote Builder Modal -->
-    <div id="quote-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Quote Builder</h2>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div id="quote-items">
-                    <!-- Quote items will be loaded here dynamically -->
-                    <p class="empty-quote">Your quote is empty. Add products to build your quote.</p>
-                </div>
-                <div class="quote-summary">
-                    <h3>Summary</h3>
-                    <div class="summary-item">
-                        <span>Subtotal:</span>
-                        <span id="quote-subtotal">$0.00</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Estimated Tax:</span>
-                        <span id="quote-tax">$0.00</span>
-                    </div>
-                    <div class="summary-item total">
-                        <span>Total:</span>
-                        <span id="quote-total">$0.00</span>
-                    </div>
-                </div>
-                <div class="quote-actions">
-                    <button id="continue-shopping" class="btn-secondary">Continue Shopping</button>
-                    <button id="request-quote" class="btn-primary">Request Quote</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Location Assignment Modal -->
-    <div id="location-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Assign Locations</h2>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div id="location-product-info">
-                    <!-- Product info will be loaded here dynamically -->
-                </div>
-                <div class="custom-locations-header">
-                    <h3>Your Delivery Locations</h3>
-                    <button id="add-location-btn" class="btn-tertiary">
-                        <i class="fas fa-plus"></i> Add New Location
-                    </button>
-                </div>
-                <div id="custom-locations-container">
-                    <!-- Custom location management UI will appear here -->
-                </div>
-                <div id="location-assignments">
-                    <!-- Location assignments will be loaded here dynamically -->
-                </div>
-                <div class="location-actions">
-                    <button id="save-locations" class="btn-primary">Save Assignments</button>
-                    <button id="cancel-locations" class="btn-secondary">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product Comparison Modal -->
-    <div id="comparison-modal" class="modal">
-        <div class="modal-content wide-modal">
-            <div class="modal-header">
-                <h2>Product Comparison</h2>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div id="comparison-container">
-                    <!-- Comparison data will be loaded here dynamically -->
-                    <p class="empty-comparison">Select products to compare.</p>
-                </div>
-                <div class="comparison-actions">
-                    <button id="close-comparison" class="btn-secondary">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product Detail Modal -->
-    <div id="product-detail-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="detail-product-name">Product Name</h2>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div id="detail-product-content">
-                    <!-- Product details will be loaded here dynamically -->
-                </div>
-                <div class="detail-actions">
-                    <div class="quantity-control">
-                        <button id="detail-decrease-qty" class="qty-btn">-</button>
-                        <input type="number" id="detail-product-qty" value="1" min="1">
-                        <button id="detail-increase-qty" class="qty-btn">+</button>
-                    </div>
-                    <button id="detail-add-to-quote" class="btn-primary">Add to Quote</button>
-                    <button id="detail-close" class="btn-secondary">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product Template -->
-    <template id="product-card-template">
-        <div class="product-card" data-product-id="">
-            <div class="product-image">
-                <img src="" alt="">
-                <div class="availability-badge"></div>
-            </div>
-            <div class="product-info">
-                <h3 class="product-name"></h3>
-                <p class="product-id"></p>
-                <p class="product-price"></p>
-                <div class="product-actions">
-                    <button class="view-details-btn btn-secondary">View Details</button>
-                    <button class="add-to-quote-btn btn-primary">Add to Quote</button>
-                    <button class="add-to-compare-btn btn-tertiary">
-                        <i class="fas fa-exchange-alt"></i> Compare
-                    </button>
-                </div>
-            </div>
-        </div>
-    </template>
-
-    <!-- Quote Item Template -->
-    <template id="quote-item-template">
-        <div class="quote-item" data-product-id="">
-            <div class="quote-item-image">
-                <img src="" alt="">
-            </div>
-            <div class="quote-item-info">
-                <h4 class="quote-item-name"></h4>
-                <p class="quote-item-id"></p>
-                <p class="quote-item-price"></p>
-                <div class="quote-item-status"></div>
-            </div>
-            <div class="quote-item-quantity">
-                <button class="decrease-qty qty-btn">-</button>
-                <input type="number" class="item-qty" value="1" min="1">
-                <button class="increase-qty qty-btn">+</button>
-            </div>
-            <div class="quote-item-actions">
-                <button class="assign-locations-btn" title="Assign Locations">
-                    <i class="fas fa-map-marker-alt"></i>
-                </button>
-                <button class="remove-item-btn" title="Remove">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-            <div class="quote-item-total"></div>
-        </div>
-    </template>
-
-    <!-- Location Assignment Template -->
-    <template id="location-assignment-template">
-        <div class="location-assignment">
-            <div class="location-info">
-                <h4 class="location-name"></h4>
-                <p class="location-address"></p>
-            </div>
-            <div class="location-quantity">
-                <label>Quantity:</label>
-                <input type="number" class="location-qty" value="0" min="0">
-            </div>
-        </div>
-    </template>
-
-    <!-- Custom Location Template -->
-    <template id="custom-location-template">
-        <div class="custom-location" data-location-id="">
-            <div class="location-details">
-                <div class="custom-location-field">
-                    <label>Location Name:</label>
-                    <input type="text" class="location-name-input" placeholder="Enter location name">
-                </div>
-                <div class="custom-location-field">
-                    <label>Address:</label>
-                    <input type="text" class="location-address-input" placeholder="Enter full address">
-                </div>
-            </div>
-            <div class="location-controls">
-                <button class="save-location-btn btn-tertiary" title="Save Location">
-                    <i class="fas fa-save"></i>
-                </button>
-                <button class="edit-location-btn btn-tertiary" title="Edit Location">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="delete-location-btn btn-tertiary" title="Delete Location">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-        </div>
-    </template>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/maxpump-logo.png" alt="MaxPumpSport Logo" id="footer-logo-placeholder">
+                    <a href="/">
+                        <img src="images/maxpump-logo.png" alt="MaxPump Logo">
+                    </a>
+                    <p>Empowering athletes with cutting-edge fitness equipment since 2005.</p>
                 </div>
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, Strength City</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, San Diego, CA 92101</p>
                     <p><i class="fas fa-phone"></i> (555) 123-4567</p>
                     <p><i class="fas fa-envelope"></i> info@maxpumpsport.com</p>
                 </div>
@@ -303,14 +107,112 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 MaxPumpSport. All rights reserved.</p>
+                <p>© 2025 MaxPump Sport Equipment. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>My Quote</h2>
+                <span class="close-modal" id="close-quote">&times;</span>
+            </div>
+            <div class="modal-body" id="quote-modal-body">
+                <!-- Quote content will be loaded dynamically -->
+                <p class="empty-quote">Your quote is empty. Add some products to get started.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-detail-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="detail-product-name">Product Name</h2>
+                <span class="close-modal" id="detail-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="detail-product-content">
+                    <!-- Product detail content will be loaded dynamically -->
+                </div>
+                <div class="detail-actions">
+                    <div class="quantity-control">
+                        <button id="detail-decrease-qty" class="qty-btn">-</button>
+                        <input type="number" id="detail-product-qty" class="item-qty" value="1" min="1">
+                        <button id="detail-increase-qty" class="qty-btn">+</button>
+                    </div>
+                    <button id="detail-add-to-quote" class="btn-primary" data-product-id="">
+                        <i class="fas fa-cart-plus"></i> Add to Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Assignment Modal -->
+    <div id="location-assignment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Assign Locations</h2>
+                <span class="close-modal" id="close-location-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="location-product-info">
+                    <!-- Product info will be loaded dynamically -->
+                </div>
+                
+                <div class="custom-locations-header">
+                    <h3>My Locations</h3>
+                    <button id="add-new-location" class="btn-secondary">
+                        <i class="fas fa-plus"></i> Add New Location
+                    </button>
+                </div>
+                
+                <div id="custom-locations-container">
+                    <!-- Custom locations will be loaded dynamically -->
+                    <p class="empty-quote">No locations added yet. Click "Add New Location" to get started.</p>
+                </div>
+                
+                <div id="location-assignments">
+                    <!-- Location assignments will be loaded dynamically -->
+                </div>
+                
+                <div class="location-assignment-status">
+                    <div class="assigned-count">
+                        <span id="assigned-quantity">0</span> of <span id="total-quantity">0</span> units assigned
+                    </div>
+                    <div class="assignment-progress">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                </div>
+                
+                <div class="location-actions">
+                    <button id="save-locations" class="btn-primary">Save Assignments</button>
+                    <button id="cancel-locations" class="btn-tertiary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Modal -->
+    <div id="comparison-modal" class="modal">
+        <div class="modal-content wide-modal">
+            <div class="modal-header">
+                <h2>Product Comparison</h2>
+                <span class="close-modal" id="close-comparison">&times;</span>
+            </div>
+            <div class="modal-body" id="comparison-container">
+                <!-- Comparison content will be loaded dynamically -->
+                <p class="empty-comparison">Select products to compare.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/quoteBuilder.js"></script>
     <script src="js/productComparison.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>
