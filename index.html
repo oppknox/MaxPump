@@ -210,6 +210,97 @@
         </div>
     </div>
 
+    <!-- Templates -->
+    <template id="product-card-template">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="" alt="">
+                <span class="availability-badge"></span>
+            </div>
+            <div class="product-info">
+                <h3 class="product-name"></h3>
+                <p class="product-id"></p>
+                <p class="product-price"></p>
+                <div class="product-actions">
+                    <button class="btn-secondary view-details-btn">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <button class="btn-primary add-to-quote-btn">
+                        <i class="fas fa-cart-plus"></i> Quote
+                    </button>
+                </div>
+                <button class="btn-tertiary add-to-compare-btn">
+                    <i class="fas fa-exchange-alt"></i> Compare
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <template id="quote-item-template">
+        <div class="quote-item">
+            <div class="quote-item-image">
+                <img src="" alt="">
+            </div>
+            <div class="quote-item-info">
+                <h3 class="quote-item-name"></h3>
+                <p class="quote-item-id"></p>
+                <div class="quote-item-price-row">
+                    <p class="quote-item-price"></p>
+                    <p class="quote-item-status"></p>
+                </div>
+            </div>
+            <div class="quote-item-actions">
+                <div class="quantity-control">
+                    <button class="decrease-qty qty-btn">-</button>
+                    <input type="number" class="item-qty" value="1" min="1">
+                    <button class="increase-qty qty-btn">+</button>
+                </div>
+                <button class="btn-secondary assign-locations-btn">
+                    <i class="fas fa-map-marker-alt"></i> Locations
+                </button>
+                <button class="btn-tertiary remove-item-btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            <div class="quote-item-total-container">
+                <span>Total:</span>
+                <span class="quote-item-total"></span>
+            </div>
+        </div>
+    </template>
+
+    <template id="custom-location-template">
+        <div class="custom-location">
+            <div class="location-info">
+                <input type="text" class="location-name-input" placeholder="Location Name" readonly>
+                <input type="text" class="location-address-input" placeholder="Location Address" readonly>
+            </div>
+            <div class="location-actions">
+                <button class="btn-secondary edit-location-btn">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn-secondary save-location-btn">
+                    <i class="fas fa-save"></i>
+                </button>
+                <button class="btn-tertiary delete-location-btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <template id="location-assignment-template">
+        <div class="location-assignment">
+            <div class="location-assignment-info">
+                <h4 class="location-name"></h4>
+                <p class="location-address"></p>
+            </div>
+            <div class="location-assignment-quantity">
+                <input type="number" class="location-qty" value="0" min="0">
+            </div>
+        </div>
+    </template>
+
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
     <script src="js/quoteBuilder.js"></script>

@@ -6,7 +6,7 @@
 const App = (() => {
     // DOM Elements
     const _elements = {
-        productContainer: document.getElementById('product-container'),
+        productContainer: document.getElementById('product-grid'),
         productSearch: document.getElementById('product-search'),
         searchBtn: document.getElementById('search-btn'),
         categorySelect: document.getElementById('category-select'),
